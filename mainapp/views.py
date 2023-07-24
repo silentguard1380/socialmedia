@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render,redirect,HttpResponseRedirect
-
+from mainapp.forms import PostForm, CommentForm
+from mainapp.models import Post, Comment
 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -63,3 +64,32 @@ def logout_user(request):
 
         return HttpResponseRedirect('/')
 
+def home(request):
+    posts = Post.objects.all()
+    post_form = PostForm()
+    comment_form = CommentForm()
+
+    if request.method == 'POST':
+        if 'post_btn' in request.POST:
+            post_form = PostForm(request.POST)
+            if post_form.is_valid():
+                post = post_form.save(commit=False)
+                post.user = request.user
+                post.save()
+                return redirect('home')
+
+        if 'comment_btn' in request.POST:
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.user = request.user
+                comment.post = Post.objects.get(id=request.POST.get('post_id'))
+                comment.save()
+                return redirect('home')
+
+    context = {
+        'posts': posts,
+        'post_form': post_form,
+        'comment_form': comment_form
+    }
+    return render(request, 'home.html', context)
