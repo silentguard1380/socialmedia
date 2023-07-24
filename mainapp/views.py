@@ -64,7 +64,7 @@ def logout_user(request):
 
         return HttpResponseRedirect('/')
 
-def home(request):
+def posts(request):
     posts = Post.objects.all()
     post_form = PostForm()
     comment_form = CommentForm()
