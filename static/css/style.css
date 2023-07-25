@@ -33,3 +33,12 @@
   .form-control {
     background-color: #dfdcdc;
   }
+
+  /* check */
+  .form-check {
+    position: relative;
+  }
+  .form-check-input{
+    position: absolute;
+    right: 0;
+   }
