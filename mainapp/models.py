@@ -16,6 +16,9 @@ class Post(models.Model):
     text = models.TextField(max_length=2000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user
     # other fields like image, video etc.
 
 class Comment(models.Model):
