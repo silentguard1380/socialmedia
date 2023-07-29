@@ -1,0 +1,46 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Vazirmatn:wght@200;300;400;500;700&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      font-weight: 500;
+     /* background: #d2d0d0;*/
+      background: #d2d0d0;
+
+  }
+
+  /* style logign */
+
+  .login a:hover {
+      border-bottom: 1px solid #0878AF;
+      color: #0878AF;
+      transition: all .3s ease-in;
+  }
+.login {
+    padding-top: 18rem;
+}
+  
+  /* style sign */
+  .sign {
+      background-color: #0878AF;
+  }
+
+  /* style form control */
+  .form-control {
+    background-color: #dfdcdc;
+  }
+
+  /* check */
+  .form-check {
+    position: relative;
+  }
+  .form-check-input{
+    position: absolute;
+    right: 0;
+   }
