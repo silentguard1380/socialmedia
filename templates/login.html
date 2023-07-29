@@ -22,9 +22,12 @@
       </div>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mx-auto">
         <div class="vstack gap-3">
-          <input class="border-0 form-control" type="text" placeholder="نام کاربری">
-          <input class="border-0 form-control" type="number" placeholder="کلمه عبور">
+          <form method="post" >
+            {% csrf_token %}
+          <input class="border-0 form-control" name='username' type="text" placeholder="نام کاربری">
+          <input class="border-0 form-control"name='password' type="number" placeholder="کلمه عبور">
           <button class="border-0 rounded-4 text-white w-100 py-2  sign">ورود</button>
+        </form>
         </div>
 
       </div>
