@@ -884,6 +884,12 @@ video {
   background-color: rgba(231,233,234,0.1);
 }
 
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+}
+
 @media (min-width: 1280px) {
   .xl\:mt-6 {
     margin-top: 1.5rem;
@@ -903,6 +909,10 @@ video {
 
   .xl\:max-w-\[25\%\] {
     max-width: 25%;
+  }
+
+  .xl\:max-w-\[23\%\] {
+    max-width: 23%;
   }
 
   .xl\:justify-start {
