@@ -596,6 +596,18 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -629,12 +641,20 @@ video {
   margin-left: 1.25rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-7 {
@@ -657,6 +677,10 @@ video {
   height: 100vh;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -673,8 +697,36 @@ video {
   width: 1.5rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .max-w-\[315px\] {
   max-width: 315px;
+}
+
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[20\%\] {
+  max-width: 20%;
+}
+
+.max-w-\[2\%\] {
+  max-width: 2%;
+}
+
+.max-w-\[25\%\] {
+  max-width: 25%;
+}
+
+.max-w-\[50px\] {
+  max-width: 50px;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
 }
 
 .flex-grow {
@@ -691,6 +743,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -758,6 +814,11 @@ video {
   padding-right: 0.75rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -821,4 +882,67 @@ video {
 
 .hover\:bg-hoverBg:hover {
   background-color: rgba(231,233,234,0.1);
+}
+
+@media (min-width: 1280px) {
+  .xl\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:h-7 {
+    height: 1.75rem;
+  }
+
+  .xl\:w-7 {
+    width: 1.75rem;
+  }
+
+  .xl\:max-w-\[25\%\] {
+    max-width: 25%;
+  }
+
+  .xl\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .xl\:bg-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 155 240 / var(--tw-bg-opacity));
+  }
+
+  .xl\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .xl\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .xl\:pl-9 {
+    padding-left: 2.25rem;
+  }
+
+  .xl\:pr-6 {
+    padding-right: 1.5rem;
+  }
+
+  .xl\:pl-3 {
+    padding-left: 0.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:absolute {
+    position: absolute;
+  }
+
+  .\32xl\:bottom-0 {
+    bottom: 0px;
+  }
 }

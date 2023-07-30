@@ -7,10 +7,12 @@
     <title>Twitter</title>
   </head>
   <body class="bg-[rgb(0,0,0)] font-ProductSansRegular text-white">
-    <!-- Header => left sidebar menu -->
-
-    <header class="max-w-[315px] pt-4 h-screen overflow-y-auto">
-      <div class="container flex flex-col items-start pl-9">
+    <!-- Header => left sidebar menu Desktop And tablet -->
+    <header
+      class="max-w-[100px] xl:max-w-[25%] pt-4 h-screen overflow-y-auto w-full relative"
+      id="desktop-header"
+    >
+      <div class="container flex flex-col items-start xl:pl-9">
         <span class="p-3 transition-all hover:bg-hoverBg rounded-full">
           <svg
             viewBox="0 0 24 24"
@@ -25,14 +27,14 @@
             </g>
           </svg>
         </span>
-        <ul class="flex flex-col text-xl mt-6">
+        <ul class="flex flex-col text-xl mt-1 xl:mt-6">
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full font-ProductSansMedium"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full font-ProductSansMedium"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -40,15 +42,15 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Home</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Home</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -56,15 +58,15 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="#">Explore</a>
+            <a class="hidden xl:block ml-4" href="#">Explore</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -72,15 +74,17 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Notifications</a>
+            <a class="hidden xl:block ml-4" href="./index.html"
+              >Notifications</a
+            >
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -88,15 +92,15 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Messages</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Messages</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -104,15 +108,15 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Lists</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Lists</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -120,29 +124,29 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Communities</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Communities</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <path
                 d="M8.52 3.59c.8-1.1 2.04-1.84 3.48-1.84s2.68.74 3.49 1.84c1.34-.21 2.74.14 3.76 1.16s1.37 2.42 1.16 3.77c1.1.8 1.84 2.04 1.84 3.48s-.74 2.68-1.84 3.48c.21 1.34-.14 2.75-1.16 3.77s-2.42 1.37-3.76 1.16c-.8 1.1-2.05 1.84-3.49 1.84s-2.68-.74-3.48-1.84c-1.34.21-2.75-.14-3.77-1.16-1.01-1.02-1.37-2.42-1.16-3.77-1.09-.8-1.84-2.04-1.84-3.48s.75-2.68 1.84-3.48c-.21-1.35.14-2.75 1.16-3.77s2.43-1.37 3.77-1.16zm3.48.16c-.85 0-1.66.53-2.12 1.43l-.38.77-.82-.27c-.96-.32-1.91-.12-2.51.49-.6.6-.8 1.54-.49 2.51l.27.81-.77.39c-.9.46-1.43 1.27-1.43 2.12s.53 1.66 1.43 2.12l.77.39-.27.81c-.31.97-.11 1.91.49 2.51.6.61 1.55.81 2.51.49l.82-.27.38.77c.46.9 1.27 1.43 2.12 1.43s1.66-.53 2.12-1.43l.39-.77.82.27c.96.32 1.9.12 2.51-.49.6-.6.8-1.55.48-2.51l-.26-.81.76-.39c.91-.46 1.43-1.27 1.43-2.12s-.52-1.66-1.43-2.12l-.77-.39.27-.81c.32-.97.12-1.91-.48-2.51-.61-.61-1.55-.81-2.51-.49l-.82.27-.39-.77c-.46-.9-1.27-1.43-2.12-1.43zm4.74 5.68l-6.2 6.77-3.74-3.74 1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36z"
               ></path>
             </svg>
-            <a class="block ml-4" href="./index.html">Verified</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Verified</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -150,15 +154,15 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">Profile</a>
+            <a class="hidden xl:block ml-4" href="./index.html">Profile</a>
           </li>
           <li
-            class="flex items-center transition-all hover:bg-hoverBg py-3 pl-3 pr-6 rounded-full"
+            class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
           >
             <svg
               viewBox="0 0 24 24"
               aria-hidden="true"
-              class="fill-secondary w-7 h-7"
+              class="fill-secondary w-8 xl:w-7 h-8 xl:h-7"
             >
               <g>
                 <path
@@ -166,28 +170,28 @@
                 ></path>
               </g>
             </svg>
-            <a class="block ml-4" href="./index.html">More</a>
+            <a class="hidden xl:block ml-4" href="./index.html">More</a>
           </li>
           <button
-            class="bg-primary rounded-full text-white py-3 px-3 mt-3 shadow-[0px_8px_28pxrgba(0,0,0,0.08)]"
+            class="hidden xl:block bg-primary rounded-full text-white py-3 px-3 mt-3 shadow-[0px_8px_28pxrgba(0,0,0,0.08)]"
           >
             Tweet
           </button>
           <div
-            class="my-4 transition-all hover:bg-hoverBg rounded-full py-3 px-5 flex items-center"
+            class="my-4 transition-all hover:bg-hoverBg rounded-full py-3 px-2 xl:px-5 flex items-center 2xl:absolute 2xl:bottom-0"
           >
             <img
               src="../images/user-profile.png"
-              class="rounded-full"
+              class="rounded-full w-10 h-10"
               alt="user profile"
             />
-            <span class="block ml-2 text-base">
+            <span class="ml-2 text-base hidden xl:block">
               <h6>mohammad</h6>
               <small class="whitespace-nowrap overflow-hidden text-ellipsis"
                 >@mohammad103</small
               >
             </span>
-            <button class="ml-5">
+            <button class="ml-5 hidden xl:block">
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
