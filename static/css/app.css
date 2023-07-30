@@ -608,9 +608,18 @@ video {
   bottom: 0px;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .ml-4 {
@@ -643,6 +652,10 @@ video {
 
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .block {
@@ -791,12 +804,20 @@ video {
   fill: rgb(231,233,234);
 }
 
+.fill-white {
+  fill: #fff;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .py-3 {
@@ -888,15 +909,28 @@ video {
   .sm\:block {
     display: block;
   }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 1280px) {
+  .xl\:my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
   .xl\:mt-6 {
     margin-top: 1.5rem;
   }
 
   .xl\:block {
     display: block;
+  }
+
+  .xl\:hidden {
+    display: none;
   }
 
   .xl\:h-7 {
@@ -932,6 +966,11 @@ video {
   .xl\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .xl\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .xl\:pl-9 {
