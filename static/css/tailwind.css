@@ -16,6 +16,27 @@
     url("../../fonts/ProductSans-Bold.woff") format("woff"),
     url("../../fonts/ProductSans-Bold.woff2") format("woff2");
 }
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overlay {
+  background-color: rgba(91, 112, 131, 0.4);
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.dropdown-icon__active {
+  transform: rotate(180deg);
+  fill: rgb(29, 155, 240) !important;
+}
