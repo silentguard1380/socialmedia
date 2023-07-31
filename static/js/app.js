@@ -22,12 +22,14 @@ const dropdownMenuHandler = (event) => {
 const showMobileMenuHandler = (event) => {
   event.stopPropagation();
   mobileMenuContainer.classList.remove("-left-[270px]");
+  mobileMenuContainer.classList.add("left-0");
   overlayContainer.classList.add("overlay");
 };
 
-// overlay container in close all Show
+// click body container in close all Show
 const closeAllShows = () => {
   mobileMenuContainer.classList.add("-left-[270px]");
+  mobileMenuContainer.classList.remove("left-0");
   overlayContainer.classList.remove("overlay");
 };
 
