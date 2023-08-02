@@ -1,24 +1,24 @@
 @font-face {
   font-family: ProductSans-Regular;
   src: url("../../fonts/ProductSans-Regular.ttf") format("truetype"),
-    url("../../fonts/ProductSans-Regular.woff") format("woff"),
     url("../../fonts/ProductSans-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: ProductSans-Medium;
   src: url("../../fonts/ProductSans-Medium.ttf") format("truetype"),
-    url("../../fonts/ProductSans-Medium.woff") format("woff"),
     url("../../fonts/ProductSans-Medium.woff2") format("woff2");
 }
 @font-face {
   font-family: ProductSans-Bold;
   src: url("../../fonts/ProductSans-Bold.ttf") format("truetype"),
-    url("../../fonts/ProductSans-Bold.woff") format("woff"),
     url("../../fonts/ProductSans-Bold.woff2") format("woff2");
 }
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+  }
+  input:focus {
+    outline: none;
   }
 }
 @tailwind base;
@@ -38,5 +38,8 @@
 
 .dropdown-icon__active {
   transform: rotate(180deg);
+  fill: rgb(29, 155, 240) !important;
+}
+.search__bar:focus + svg {
   fill: rgb(29, 155, 240) !important;
 }
