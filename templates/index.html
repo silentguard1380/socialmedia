@@ -233,7 +233,7 @@
         <div id="mobile-header" class="block sm:hidden">
           <div class="container">
             <div
-              class="flex justify-between items-center bg-[rgba(0,0,0,0.65)] py-4 fixed top-0 w-full left-0 right-0 z-30"
+              class="flex justify-between items-center bg-[rgba(0,0,0,0.65)] py-4 w-full"
             >
               <button class="w-8 h-8 block ml-3" id="menuMobileButton">
                 <!-- //link -->
@@ -484,26 +484,31 @@
       </header>
 
       <main
-        class="sm:ml-auto sm:w-[calc(100%-97px)] xl:w-[calc(100%-278px)] flex mt-16 sm:mt-0"
+        class="sm:ml-auto sm:w-[calc(100%-97px)] xl:w-[calc(100%-278px)] flex mt-2 sm:mt-0"
       >
         <section
           class="sm:border w-full lg:w-[60%] sm:border-borderColor container px-0"
         >
-          <h3 class="font-ProductSansBold text-xl mt-4 hidden sm:block px-4">
-            Home
-          </h3>
-          <div
-            class="flex justify-around mt-5 border-b border-borderColor text-center"
-          >
-            <span
-              class="block cursor-pointer text-third w-full transition-all hover:bg-hoverBg py-3 px-4"
-              >For you</span
+          <!-- Start Header main Content -->
+          <div class="sticky top-0 w-full z-20 bg-[rgba(0,0,0,0.65)]">
+            <h3 class="font-ProductSansBold text-xl pt-4 hidden sm:block px-4">
+              Home
+            </h3>
+            <div
+              class="flex justify-around mt-5 border-b border-borderColor text-center"
             >
-            <span
-              class="block cursor-pointer font-ProductSansBold pt-3 px-4 w-full transition-all hover:bg-hoverBg after:block after:w-16 after:h-1 after:bg-primary after:rounded-lg after:mx-auto after:mt-3"
-              >Following</span
-            >
+              <span
+                class="block cursor-pointer text-third w-full transition-all hover:bg-hoverBg py-3 px-4"
+                >For you</span
+              >
+              <span
+                class="block cursor-pointer font-ProductSansBold pt-3 px-4 w-full transition-all hover:bg-hoverBg after:block after:w-16 after:h-1 after:bg-primary after:rounded-lg after:mx-auto after:mt-3"
+                >Following</span
+              >
+            </div>
           </div>
+          <!-- End Header main Content -->
+
           <!-- Start Main Content Twitter-->
           <div class="text-center relative" id="content-twitter">
             <!-- Start  modal Choose audience modal-->
@@ -1674,10 +1679,23 @@
                       />
                     </span>
                     <span class="flex flex-col">
-                      <strong
-                        class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
-                        >omid Kazemi</strong
-                      >
+                      <div class="flex items-center">
+                        <strong
+                          class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
+                          >omid Kazemi</strong
+                        >
+                        <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
+                        <span class="bolok ml-1" id="blueTik">
+                          <!-- add hidden class by hidden blue tick-->
+                          <svg viewBox="0 0 22 22" class="w-5 h-5 fill-primary">
+                            <g>
+                              <path
+                                d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
                       <small class="text-third text-base">@omidKazemi</small>
                     </span>
                   </div>
@@ -1699,11 +1717,25 @@
                         alt="user image"
                       />
                     </span>
+
                     <span class="flex flex-col">
-                      <strong
-                        class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
-                        >mohammad zeynali</strong
-                      >
+                      <div class="flex items-center">
+                        <strong
+                          class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
+                          >mohammad zeynali</strong
+                        >
+                        <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
+                        <span class="bolok ml-1" id="blueTik">
+                          <!-- add hidden class by hidden blue tick-->
+                          <svg viewBox="0 0 22 22" class="w-5 h-5 fill-primary">
+                            <g>
+                              <path
+                                d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
                       <small class="text-third text-base">@zeynali2000</small>
                     </span>
                   </div>
@@ -1726,10 +1758,23 @@
                       />
                     </span>
                     <span class="flex flex-col">
-                      <strong
-                        class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
-                        >ahmedReza</strong
-                      >
+                      <div class="flex items-center">
+                        <strong
+                          class="font-medium font-ProductSansMedium w-fit relative transition-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white hover:after:opacity-100 after:absolute after:bottom-1"
+                          >ahmedReza
+                        </strong>
+                        <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
+                        <span class="hidden ml-1" id="blueTik">
+                          <!-- add hidden class by hidden blue tick-->
+                          <svg viewBox="0 0 22 22" class="w-5 h-5 fill-primary">
+                            <g>
+                              <path
+                                d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </span>
+                      </div>
                       <small class="text-third text-base">@ahmed2000</small>
                     </span>
                   </div>
