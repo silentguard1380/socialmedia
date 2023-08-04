@@ -53,13 +53,13 @@ def login_user(request):
 
     return render(request, 'login.html')
 
-@login_required
+
 def logout_user(request):
 
 
         logout(request)
 
-        return HttpResponseRedirect('/')
+        return redirect('/')
 
 def posts(request):
     posts = Post.objects.all()
