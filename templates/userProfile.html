@@ -510,9 +510,7 @@
                 </svg>
               </a>
               <div class="flex flex-col pl-4">
-                <h3
-                  class="font-ProductSansBold text-lg pt-2 flex sm:items-center"
-                >
+                <h3 class="font-ProductSansBold text-lg pt-2 flex items-center">
                   <span>ali mohammady</span>
                   <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
                   <span class="bolok ml-1" id="blueTik">
@@ -536,120 +534,159 @@
 
           <!-- Start Main Content Twitter-->
           <div class="text-center relative" id="content-twitter">
-            <!-- Start user profile image -->
             <div class="relative">
-              <img
-                src="../images/users/user-big-profile.jpg"
-                class="object-cover w-full h-auto hidden sm:block"
-                alt="user banner image"
-              />
-              <div class="sm:absolute w-full sm:-bottom-[74px]">
-                <div class="flex justify-between items-cenetr sm:items-end p-4">
-                  <span class="block w-28 sm:w-32 h-28 sm:h-32">
-                    <img
-                      src="../images/users/user-1.jpg"
-                      class="w-full h-full object-cover rounded-full border-4 border-[rgb(0,0,0)]"
-                      alt="user small image"
-                    />
-                  </span>
-                  <span class="mb-2 flex flex-row-reverse items-center gap-3">
-                    <button
-                      class="bg-[rgb(239,243,244)] font-ProductSansMedium text-[rgb(0,0,0)] h-9 px-4 rounded-2xl"
+              <!-- Start user profile image -->
+              <div class="relative">
+                <img
+                  src="../images/users/user-big-profile.jpg"
+                  class="object-cover w-full h-auto hidden sm:block"
+                  alt="user banner image"
+                />
+                <div class="sm:absolute w-full sm:-bottom-[74px]">
+                  <div
+                    class="flex max-[330px]:flex-col justify-between items-cenetr sm:items-end p-4"
+                  >
+                    <span class="block w-28 sm:w-32 h-28 sm:h-32">
+                      <img
+                        src="../images/users/user-1.jpg"
+                        class="w-full h-full object-cover rounded-full border-4 border-[rgb(0,0,0)]"
+                        alt="user small image"
+                      />
+                    </span>
+                    <span
+                      class="mb-2 flex flex-row-reverse items-center gap-2 sm:gap-3"
                     >
-                      Follow
-                    </button>
-                    <button
-                      class="p-2 border border-[rgb(239,243,244)] rounded-full"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        class="fill-[rgb(239,243,244)] w-5 h-5"
+                      <button
+                        class="bg-[rgb(239,243,244)] font-ProductSansMedium text-[rgb(0,0,0)] h-9 px-4 rounded-2xl"
                       >
-                        <g>
-                          <path
-                            d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"
-                          ></path>
-                        </g>
-                      </svg>
-                    </button>
-                    <button
-                      class="p-2 border border-[rgb(239,243,244)] rounded-full"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        class="fill-[rgb(239,243,244)] w-5 h-5"
+                        Follow
+                      </button>
+                      <button
+                        class="p-2 border border-[rgb(239,243,244)] rounded-full"
                       >
-                        <g>
-                          <path
-                            d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
-                          ></path>
-                        </g>
-                      </svg>
-                    </button>
-                  </span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="fill-[rgb(239,243,244)] w-5 h-5"
+                        >
+                          <g>
+                            <path
+                              d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"
+                            ></path>
+                          </g>
+                        </svg>
+                      </button>
+                      <button
+                        class="p-2 border border-[rgb(239,243,244)] rounded-full"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="fill-[rgb(239,243,244)] w-5 h-5"
+                        >
+                          <g>
+                            <path
+                              d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+                            ></path>
+                          </g>
+                        </svg>
+                      </button>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- End user profile image -->
+              <!-- End user profile image -->
 
-            <!-- Start User Profile details -->
-            <div class="px-4 sm:mt-14 sm:p-4 text-left">
-              <!-- Start username and name account user-->
-              <div class="flex flex-col">
-                <h3
-                  class="font-ProductSansBold text-lg pt-2 flex sm:items-center"
-                >
-                  <span>ali mohammady</span>
-                  <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
-                  <span class="bolok ml-1" id="blueTik">
-                    <!-- add hidden class by hidden blue tick-->
-                    <svg viewBox="0 0 22 22" class="w-5 h-5 fill-primary">
-                      <g>
-                        <path
-                          d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </span>
-                </h3>
-                <small
-                  class="text-third text-left text-base font-ProductSansMedium pb-2"
-                >
-                  @mhmd2003
+              <!-- Start User Profile details -->
+              <div class="px-4 sm:mt-14 sm:p-4 text-left">
+                <!-- Start username and name account user-->
+                <div class="flex flex-col">
+                  <h3
+                    class="font-ProductSansBold text-lg pt-2 flex items-center"
+                  >
+                    <span>ali mohammady</span>
+                    <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
+                    <span class="bolok ml-1" id="blueTik">
+                      <!-- add hidden class by hidden blue tick-->
+                      <svg viewBox="0 0 22 22" class="w-5 h-5 fill-primary">
+                        <g>
+                          <path
+                            d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </h3>
+                  <small
+                    class="text-third text-left text-base font-ProductSansMedium pb-2"
+                  >
+                    @mhmd2003
+                  </small>
+                </div>
+                <!-- End username and name account user-->
+
+                <!-- start user profile biography  -->
+                <p class="mt-1">
+                  5 x boosted 😷💉, Xe/Xim, Vice/BBC, BLM ✊🏿, Democrat, Vegan,
+                  Just Stop Oil, Climate change ⚠️! Biden 2024 🇺🇦 🌈
+                </p>
+                <!-- End user profile biography  -->
+
+                <!-- start profile followers -->
+                <div class="flex items-center gap-5 text-third mt-2">
+                  <strong
+                    class="flex items-center font-medium cursor-pointer w-fit relative transtion-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white after:absolute after:bottom-1 hover:after:opacity-100"
+                  >
+                    <span class="text-white pr-1">468</span>
+                    Following
+                  </strong>
+                  <strong
+                    class="flex items-center font-medium cursor-pointer w-fit relative transtion-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white after:absolute after:bottom-1 hover:after:opacity-100"
+                  >
+                    <span class="text-white pr-1">7.5m</span>
+                    Followers
+                  </strong>
+                </div>
+                <!-- end profile followers -->
+
+                <!-- warning not follow-->
+                <small class="block text-third mt-2 pb-8 lg:pb-4"
+                  >Not followed by anyone you’re following
                 </small>
               </div>
-              <!-- End username and name account user-->
+              <!-- End User Profile details -->
 
-              <!-- start user profile biography  -->
-              <p class="mt-1">
-                5 x boosted 😷💉, Xe/Xim, Vice/BBC, BLM ✊🏿, Democrat, Vegan,
-                Just Stop Oil, Climate change ⚠️! Biden 2024 🇺🇦 🌈
-              </p>
-              <!-- End user profile biography  -->
-
-              <!-- start profile followers -->
-              <div class="flex items-center gap-5 text-third mt-2">
-                <strong
-                  class="flex items-center font-medium cursor-pointer w-fit relative transtion-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white after:absolute after:bottom-1 hover:after:opacity-100"
+              <!-- Start profile tab list -->
+              <div
+                class="flex justify-between items-center absolute left-0 right-0 -bottom-8 w-full text-third"
+              >
+                <!-- Active Profile tab-->
+                <h6
+                  class="font-ProductSansMedium relative text-white py-3 px-3 sm:px-4 transtion-all hover:bg-hoverBg after:block after:w-[calc(100%-32px)] after:min-w-[45px] after:h-1 after:bg-primary after:rounded-lg after:absolute after:bottom-0"
                 >
-                  <span class="text-white pr-1">468</span>
-                  Following
-                </strong>
-                <strong
-                  class="flex items-center font-medium cursor-pointer w-fit relative transtion-all after:block after:opacity-0 after:w-full after:h-[1px] after:bg-white after:absolute after:bottom-1 hover:after:opacity-100"
+                  Tweet
+                </h6>
+                <h6
+                  class="cursor-pointer py-3 px-3 sm:px-4 transtion-all hover:bg-hoverBg"
                 >
-                  <span class="text-white pr-1">7.5m</span>
-                  Followers
-                </strong>
+                  Replies
+                </h6>
+                <h6
+                  class="cursor-pointer py-3 px-3 sm:px-4 transtion-all hover:bg-hoverBg"
+                >
+                  Highlights
+                </h6>
+                <h6
+                  class="cursor-pointer py-3 px-3 sm:px-4 transtion-all hover:bg-hoverBg"
+                >
+                  Media
+                </h6>
+                <h6
+                  class="cursor-pointer py-3 px-3 sm:px-4 transtion-all hover:bg-hoverBg"
+                >
+                  Likes
+                </h6>
               </div>
-              <!-- end profile followers -->
-
-              <!-- warning not follow-->
-              <small class="text-third mt-2"
-                >Not followed by anyone you’re following
-              </small>
+              <!-- End profile tab list -->
             </div>
-            <!-- End User Profile details -->
 
             <!-- Start Post Template And Show All Post Twitter-->
             <div class="flex flex-col mt-4">
