@@ -18,12 +18,13 @@ def home(request):
 
 def signup_user(request):
     if request.method == 'POST':
+
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
 
         print(username,email)
-
+        print(password)
         # if not username or not password or not email:
         #     return HttpResponseBadRequest("Username, password, and email are required.")
         if User.objects.filter(username=username).exists():
@@ -33,12 +34,14 @@ def signup_user(request):
         user = User.objects.create_user(username=username, password=password, email=email)
         user.save()
         login(request,user)
+        print(username, email)
+
         # return JsonResponse({'status': 'success'})
         return redirect('/')
 
 
 
-    return render(request, 'sign.html', {})
+    return render(request, 'registerUser.html', {})
 
 
 def login_user(request):

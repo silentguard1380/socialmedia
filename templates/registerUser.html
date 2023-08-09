@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/app.css" />
+    <link rel="stylesheet" href="{% static '/css/app.css' %}" />
     <title>register user</title>
   </head>
   <body class="bg-[rgb(0,0,0)] text-white">
@@ -22,25 +23,29 @@
           Create a user account
         </h1>
         <form
-          action="#"
+                action="signup"
           class="w-full flex flex-col"
-        >
+          method="post">
+          {% csrf_token %}
           <!-- input userName-->
           <dv class="w-full mt-5">
             <input
               type="text"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
-              placeholder="name"
+              placeholder="username"
+              name = "username"
             />
           </dv>
           <!-- input email-->
           <dv class="w-full mt-5">
             <input
+
               type="email"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="email"
               required
               id="emailInput"
+              name = "email"
             />
             <span
               id="emailValidationMessage"
@@ -125,6 +130,7 @@
               placeholder="password"
               required
               id="passwordInput"
+              name = "password"
             />
             <span
               id="passwordValidationMessage"
@@ -146,6 +152,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="../static/js/registerUser.js"></script>
+    <script src="{% static 'js/registerUser.js' %}"></script>
   </body>
 </html>
