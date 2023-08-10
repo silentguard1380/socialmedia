@@ -21,22 +21,24 @@
         <h1 class="text-2xl font-ProductSansBold mt-4">
           Create a user account
         </h1>
-        <form action="#" class="w-full flex flex-col" id="registerForm">
+        <form action="" class="w-full flex flex-col" id="registerForm">
           <!-- input userName-->
           <dv class="w-full mt-5">
             <input
               type="text"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="name"
+              name="username"
             />
           </dv>
           <!-- input email-->
           <dv class="w-full mt-5">
             <input
+              id="emailInput"
               type="email"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="email"
-              id="emailInput"
+              name="email"
             />
             <span
               id="emailValidationMessage"
@@ -116,11 +118,12 @@
           <!-- input password-->
           <dv class="w-full mt-5 relative">
             <input
+              id="passwordInput"
               type="password"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="password"
+              name="password"
               required
-              id="passwordInput"
             />
             <!-- Icon Eye Is Show And Hidden Password-->
             <button class="absolute top-[40%] right-2" id="eyePasswordRegister">
