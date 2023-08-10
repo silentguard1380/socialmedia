@@ -681,6 +681,34 @@ input:focus {
   top: 9.5rem;
 }
 
+.top-1\/2 {
+  top: 50%;
+}
+
+.top-\[\] {
+  top: ;
+}
+
+.top-\[40\%\] {
+  top: 40%;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -702,11 +730,6 @@ input:focus {
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .-mt-8 {
@@ -787,6 +810,14 @@ input:focus {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .block {
@@ -1036,14 +1067,6 @@ input:focus {
   border-bottom-width: 1px;
 }
 
-.border-l {
-  border-left-width: 1px;
-}
-
-.border-r {
-  border-right-width: 1px;
-}
-
 .border-t {
   border-top-width: 1px;
 }
@@ -1076,11 +1099,6 @@ input:focus {
 .border-borderColor {
   --tw-border-opacity: 1;
   border-color: rgb(47 51 54 / var(--tw-border-opacity));
-}
-
-.border-primary {
-  --tw-border-opacity: 1;
-  border-color: rgb(29 155 240 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(0\2c 0\2c 0\)\] {
@@ -1515,11 +1533,6 @@ input:focus {
   display: block;
 }
 
-.before\:h-\[\]::before {
-  content: var(--tw-content);
-  height: ;
-}
-
 .before\:h-\[1px\]::before {
   content: var(--tw-content);
   height: 1px;
@@ -1557,14 +1570,14 @@ input:focus {
   margin-right: auto;
 }
 
-.after\:mt-3::after {
-  content: var(--tw-content);
-  margin-top: 0.75rem;
-}
-
 .after\:ml-4::after {
   content: var(--tw-content);
   margin-left: 1rem;
+}
+
+.after\:mt-3::after {
+  content: var(--tw-content);
+  margin-top: 0.75rem;
 }
 
 .after\:block::after {
@@ -1580,16 +1593,6 @@ input:focus {
 .after\:h-\[1px\]::after {
   content: var(--tw-content);
   height: 1px;
-}
-
-.after\:h-\[\]::after {
-  content: var(--tw-content);
-  height: ;
-}
-
-.after\:h-\[1\]::after {
-  content: var(--tw-content);
-  height: 1;
 }
 
 .after\:w-16::after {
@@ -1617,14 +1620,10 @@ input:focus {
   border-radius: 0.5rem;
 }
 
-.after\:border-l::after {
+.after\:bg-borderColor::after {
   content: var(--tw-content);
-  border-left-width: 1px;
-}
-
-.after\:border-t::after {
-  content: var(--tw-content);
-  border-top-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 51 54 / var(--tw-bg-opacity));
 }
 
 .after\:bg-primary::after {
@@ -1637,22 +1636,6 @@ input:focus {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.after\:bg-borderColor::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(47 51 54 / var(--tw-bg-opacity));
-}
-
-.after\:pr-4::after {
-  content: var(--tw-content);
-  padding-right: 1rem;
-}
-
-.after\:pl-4::after {
-  content: var(--tw-content);
-  padding-left: 1rem;
 }
 
 .after\:opacity-0::after {
