@@ -3,12 +3,10 @@ from django.shortcuts import render,redirect,HttpResponseRedirect,HttpResponse
 from mainapp.forms import PostForm, CommentForm
 from mainapp.models import Post, Comment
 
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate,get_user_model,logout
 from django.http import JsonResponse, HttpResponseBadRequest
-
-
+from .models import User
 
 
 def home(request):

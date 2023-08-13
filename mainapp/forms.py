@@ -1,9 +1,9 @@
 from django import forms
-from .models import UserProfile, Post, Comment
+from .models import Post, Comment, User
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = User
         fields = ['bio', 'location', 'birth_date']
 
 class PostForm(forms.ModelForm):
