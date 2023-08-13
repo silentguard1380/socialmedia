@@ -39,6 +39,7 @@
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="email"
               name="email"
+              required
             />
             <span
               id="emailValidationMessage"
@@ -123,6 +124,7 @@
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="password"
               name="password"
+              pattern="^(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}"
               required
             />
             <!-- Icon Eye Is Show And Hidden Password-->
@@ -151,7 +153,7 @@
               class="text-sm text-[rgb(244,33,46)] hidden absolute top-14 left-0 right-0"
             >
               The password must be at least 8 characters and a combination of
-              uppercase and lowercase letters and symbols
+              lowercase letters and symbols
             </span>
           </dv>
 
