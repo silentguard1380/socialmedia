@@ -108,3 +108,8 @@ def posts(request):
         'comment_form': comment_form
     }
     return render(request, 'home.html', context)
+
+
+def userprofile(request):
+
+    return render(request,'userProfile.html',context={})
