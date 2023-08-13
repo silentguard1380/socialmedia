@@ -12,7 +12,7 @@ from django.http import JsonResponse, HttpResponseBadRequest
 
 
 def home(request):
-    return HttpResponse('hello world')
+    return render(request,'index.html',context={})
 
 
 
@@ -45,17 +45,32 @@ def signup_user(request):
 
 
 def login_user(request):
-
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print(username,password)
+        if username and password:
+            try:
+                user = authenticate(request, usernaem=username, password=password)
+                print(user)
+                if user is not None:
+                    login(request, user)
+                    return redirect('/')
+                else:
+                    error_message = 'Invalid email or password.'
+            except Exception as e:
+                error_message = str(e)
+        else:
+            error_message = 'Please provide email and password.'
 
-    return render(request, 'login.html')
+        # نمایش پیام خطا یا اعلان به کاربر
+        context = {
+            'error_message': error_message
+        }
+        print(context)
+        return render(request, 'loginUser.html', context)
 
+    return render(request, 'loginUser.html')
 
 def logout_user(request):
 
