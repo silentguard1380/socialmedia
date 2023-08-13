@@ -22,26 +22,16 @@
         <h1 class="text-2xl font-ProductSansBold mt-4">
           Create a user account
         </h1>
-        <form action="/signup" class="w-full flex flex-col" id="registerForm" method="post">
-          {% csrf_token %}
+        <form action="{% url 'register-page' %}" class="w-full flex flex-col" id="registerForm" method="post"> {% csrf_token %}
           <!-- input userName-->
           <dv class="w-full mt-5">
-            <input
-              type="text"
-              class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
-              placeholder="name"
-              name="username"
-            />
+            {{ register_form.username }}
+            {{ register_form.username.errors }}
           </dv>
           <!-- input email-->
           <dv class="w-full mt-5">
-            <input
-              id="emailInput"
-              type="email"
-              class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
-              placeholder="email"
-              name="email"
-            />
+            {{ register_form.email }}
+            {{ register_form.email.errors }}
             <span
               id="emailValidationMessage"
               class="text-sm text-[rgb(244,33,46)] hidden"

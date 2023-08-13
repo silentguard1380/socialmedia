@@ -1,17 +1,16 @@
 
 from django.shortcuts import render,redirect,HttpResponseRedirect,HttpResponse
-from mainapp.forms import PostForm, CommentForm
+from mainapp.forms import PostForm, CommentForm, RegisterForm
 from mainapp.models import Post, Comment
-
+from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate,get_user_model,logout
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse, HttpResponseBadRequest, HttpRequest
 from .models import User
 
 
 def home(request):
     return render(request,'index.html',context={})
-
 
 
 def signup_user(request):
@@ -41,6 +40,27 @@ def signup_user(request):
 
     return render(request, 'registerUser.html', {})
 
+
+class RegisterView(View):
+    def get(self, request: HttpRequest):
+        register_form: RegisterForm = RegisterForm()
+        return render(request, r'registerUser.html', context={
+            'register_form': register_form
+        })
+
+    def post(self, request: HttpRequest):
+        register_form: RegisterForm = RegisterForm(request.POST)
+        if register_form.is_valid() == True:
+            is_registered: User & bool = User.objects.filter(email__iexact=register_form.cleaned_data.get('email')).exists()
+            if is_registered == False:
+                new_user: User = User()
+                new_user.username = register_form.cleaned_data.get('username')
+                new_user.email = register_form.cleaned_data.get('email')
+                new_user.month = register_form.cleaned_data.get()
+
+        return render(request, r'registerUser.html', context={
+            'register_form': register_form
+        })
 
 def login_user(request):
     if request.method == 'POST':
