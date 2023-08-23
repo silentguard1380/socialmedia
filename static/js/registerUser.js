@@ -56,7 +56,7 @@ const renderOptionElementToDom = (arrays, elementContainer) => {
   });
 };
 
-// function resubale validations inputs
+// function rusable validations inputs
 function InputValidationStatus(
   regexRule,
   mainInputElem,
@@ -67,12 +67,12 @@ function InputValidationStatus(
   if (resultValidation) {
     mainInputElem.style.borderColor = "rgb(29,155,240)";
     mainInputValidationMessage.classList.add("hidden");
-    registerButton.classList.remove("mt-14");
+    registerButton.classList.remove("!mt-14");
     return resultValidation;
   } else {
     mainInputElem.style.borderColor = "rgb(244, 33, 46)";
     mainInputValidationMessage.classList.remove("hidden");
-    registerButton.classList.add("mt-14");
+    registerButton.classList.add("!mt-14");
     return resultValidation;
   }
 }

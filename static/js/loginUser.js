@@ -22,12 +22,12 @@ const InputValidationStatus = (
   if (!resultValidation) {
     mainInputValidationMessage.classList.remove("hidden");
     mainInput.style.borderColor = "rgb(244, 33, 46)";
-    loginButton.classList.add("mt-14");
+    loginButton.classList.add("!mt-14");
     return resultValidation;
   } else {
     mainInputValidationMessage.classList.add("hidden");
     mainInput.style.borderColor = "rgb(29,155,240)";
-    loginButton.classList.remove("mt-14");
+    loginButton.classList.remove("!mt-14");
     return resultValidation;
   }
 };

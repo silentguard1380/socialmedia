@@ -673,40 +673,20 @@ input:focus {
   top: 2.75rem;
 }
 
+.top-14 {
+  top: 3.5rem;
+}
+
 .top-\[10px\] {
   top: 10px;
-}
-
-.top-\[9\.5rem\] {
-  top: 9.5rem;
-}
-
-.top-1\/2 {
-  top: 50%;
-}
-
-.top-\[\] {
-  top: ;
 }
 
 .top-\[40\%\] {
   top: 40%;
 }
 
-.right-1 {
-  right: 0.25rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-16 {
-  top: 4rem;
-}
-
-.top-14 {
-  top: 3.5rem;
+.top-\[9\.5rem\] {
+  top: 9.5rem;
 }
 
 .z-20 {
@@ -730,6 +710,16 @@ input:focus {
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .-mt-8 {
@@ -788,6 +778,10 @@ input:focus {
   margin-top: 0.25rem;
 }
 
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
@@ -812,12 +806,8 @@ input:focus {
   margin-top: 2rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mt-14 {
-  margin-top: 3.5rem;
+.\!mt-14 {
+  margin-top: 3.5rem !important;
 }
 
 .block {
@@ -1360,10 +1350,6 @@ input:focus {
 
 .font-medium {
   font-weight: 500;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 .lowercase {
