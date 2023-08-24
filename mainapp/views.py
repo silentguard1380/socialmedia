@@ -1,4 +1,3 @@
-
 from django.shortcuts import render,redirect,HttpResponseRedirect,HttpResponse
 from mainapp.forms import PostForm, CommentForm
 from mainapp.models import Post, Comment
@@ -51,7 +50,7 @@ def login_user(request):
         print(username,password)
         if username and password:
             try:
-                user = authenticate(request, usernaem=username, password=password)
+                user = authenticate(request, username=username, password=password)
                 print(user)
                 if user is not None:
                     login(request, user)
@@ -111,5 +110,8 @@ def posts(request):
 
 
 def userprofile(request):
+
+    contex={'name':request.user.name,
+            '':''}
 
     return render(request,'userProfile.html',context={})

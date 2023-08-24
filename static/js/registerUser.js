@@ -39,9 +39,12 @@ const eyePasswordRegisterIcon = document.querySelector(
   "#eyePasswordRegisterIcon"
 );
 
+let statusEmailValidation = null;
+let statusPasswordValidation = null;
 // regex rule
 const emailRegex = /(?!.*\.\.)\w[\w.]{3,25}@(gmail|yahoo)\.com/;
-const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
+const passwordRegex = /(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
+// /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
 
 // function resubale generate option element select box
 const renderOptionElementToDom = (arrays, elementContainer) => {
@@ -53,7 +56,7 @@ const renderOptionElementToDom = (arrays, elementContainer) => {
   });
 };
 
-// function resubale validations inputs
+// function rusable validations inputs
 function InputValidationStatus(
   regexRule,
   mainInputElem,
@@ -64,11 +67,13 @@ function InputValidationStatus(
   if (resultValidation) {
     mainInputElem.style.borderColor = "rgb(29,155,240)";
     mainInputValidationMessage.classList.add("hidden");
-    registerButton.classList.remove("mt-14");
+    registerButton.classList.remove("!mt-14");
+    return resultValidation;
   } else {
     mainInputElem.style.borderColor = "rgb(244, 33, 46)";
     mainInputValidationMessage.classList.remove("hidden");
-    registerButton.classList.add("mt-14");
+    registerButton.classList.add("!mt-14");
+    return resultValidation;
   }
 }
 
@@ -81,20 +86,31 @@ function InputValidationStatus(
 })();
 
 // Set Events
-registerFormContainer.addEventListener("submit", (event) =>
-  event.preventDefault()
+registerFormContainer.addEventListener("submit", (event) => {
+  if (!statusEmailValidation || !statusPasswordValidation) {
+    event.preventDefault();
+  }
+});
+emailInputElem.addEventListener(
+  "keyup",
+  () =>
+    (statusEmailValidation = InputValidationStatus(
+      emailRegex,
+      emailInputElem,
+      emailValidationMessage
+    ))
 );
-emailInputElem.addEventListener("keyup", () =>
-  InputValidationStatus(emailRegex, emailInputElem, emailValidationMessage)
+passwordInputElem.addEventListener(
+  "keyup",
+  () =>
+    (statusPasswordValidation = InputValidationStatus(
+      passwordRegex,
+      passwordInputElem,
+      passwordValidationMessage
+    ))
 );
-passwordInputElem.addEventListener("keyup", () =>
-  InputValidationStatus(
-    passwordRegex,
-    passwordInputElem,
-    passwordValidationMessage
-  )
-);
-eyePasswordRegister.addEventListener("click", () => {
+eyePasswordRegister.addEventListener("click", (event) => {
+  event.preventDefault();
   if (passwordInputElem.type === "password") {
     passwordInputElem.type = "text";
     eyePasswordRegisterIcon.innerHTML = "";
