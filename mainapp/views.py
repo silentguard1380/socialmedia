@@ -6,18 +6,37 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate,get_user_model,logout
 from django.http import JsonResponse, HttpResponseBadRequest
+from .forms import UserProfileForm
 
-
-
+from .models import Post
 
 def home(request):
-    return render(request,'index.html',context={})
+    try:
+
+        user_profile = request.user.userprofile
+
+        user = request.user  # دریافت کاربر لاگین شده
+        user_posts = Post.objects.filter(user=user)
+
+        contex={'username':request.user.username,
+                'name':request.user.username,
+                'profile_image' : user_profile.profile_image,
+                'post':user_posts
+
+
+                }
+        return render(request, 'index.html', context=contex)
+    except:
+
+
+        return render(request,'index.html',context={})
 
 
 
 def signup_user(request):
     if request.method == 'POST':
-
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -30,7 +49,7 @@ def signup_user(request):
             return HttpResponseBadRequest("Username already exists.")
         if User.objects.filter(email=email).exists():
             return HttpResponseBadRequest("Email already exists.")
-        user = User.objects.create_user(username=username, password=password, email=email)
+        user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username, password=password, email=email)
         user.save()
         login(request,user)
         print(username, email)
@@ -108,10 +127,19 @@ def posts(request):
     }
     return render(request, 'home.html', context)
 
-
+@login_required(login_url='login')
 def userprofile(request):
+    user_profile = request.user.userprofile
 
-    contex={'name':request.user.name,
-            '':''}
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=user_profile)
 
-    return render(request,'userProfile.html',context={})
+    context = {'form': form,
+               'username':request.user.username,
+               'background_image':request.user.userprofile.background_image}
+    return render(request, 'userProfile.html', context)

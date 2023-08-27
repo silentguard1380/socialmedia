@@ -10,7 +10,7 @@
   <body class="bg-[rgb(0,0,0)] text-white">
     <div class="container">
       <div
-        class="flex flex-col items-center justify-center mt-16 max-w-lg mx-auto shadow-[0px_1px_2px_rgb(36,45,52)] rounded-lg p-2"
+        class="flex flex-col items-center justify-center mt-4 max-w-lg mx-auto shadow-[0px_1px_2px_rgb(36,45,52)] rounded-lg p-2"
       >
         <svg viewBox="0 0 24 24" class="w-8 h-8 fill-[rgb(231,233,234)] mt-5">
           <g>
@@ -24,12 +24,30 @@
         </h1>
         <form action="/signup" class="w-full flex flex-col" id="registerForm" method="post">
           {% csrf_token %}
-          <!-- input userName-->
+          <!-- input firstName -->
           <dv class="w-full mt-5">
             <input
               type="text"
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="name"
+              name="firstname"
+            />
+          </dv>
+          <!-- input userFamily-->
+          <dv class="w-full mt-5">
+            <input
+              type="text"
+              class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
+              placeholder="family"
+              name="lastname"
+            />
+          </dv>
+          <!-- input username -->
+          <dv class="w-full mt-5">
+            <input
+              type="text"
+              class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
+              placeholder="username"
               name="username"
             />
           </dv>
@@ -41,6 +59,7 @@
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="email"
               name="email"
+              required
             />
             <span
               id="emailValidationMessage"
@@ -49,74 +68,7 @@
               Please enter a valid email
             </span>
           </dv>
-          <dv class="w-full mt-5 flex justify-between items-center gap-2">
-            <!-- select box months -->
-            <div
-              class="flex items-center justify-between border border-borderColor rounded-lg w-full sm:w-auto relative"
-            >
-              <label for="monthSelectBox" class="text-sm absolute top-1 left-2"
-                >month</label
-              >
-              <select
-                id="monthSelectBox"
-                class="appearance-none pt-6 bg-[rgba(0,0,0,0)] text-[rgb(231,233,234)] focus:outline-none py-4 sm:pr-16 pl-2 w-full sm:w-auto"
-              ></select>
-              <svg
-                viewBox="0 0 24 24"
-                class="fill-third w-4 h-4 absolute right-2 pointer-events-none"
-              >
-                <g>
-                  <path
-                    d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <!-- select box days -->
-            <div
-              class="flex items-center justify-between border border-borderColor rounded-lg w-full sm:w-auto relative"
-            >
-              <label for="monthSelectBox" class="text-sm absolute top-1 left-2"
-                >day</label
-              >
-              <select
-                id="daySelectBox"
-                class="appearance-none pt-6 bg-[rgba(0,0,0,0)] text-[rgb(231,233,234)] focus:outline-none py-4 sm:pr-16 pl-2 w-full sm:w-auto"
-              ></select>
-              <svg
-                viewBox="0 0 24 24"
-                class="fill-third w-4 h-4 absolute right-2 pointer-events-none"
-              >
-                <g>
-                  <path
-                    d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <!-- select box years -->
-            <div
-              class="flex items-center justify-between border border-borderColor rounded-lg w-full sm:w-auto relative"
-            >
-              <label for="monthSelectBox" class="text-sm absolute top-1 left-2"
-                >year</label
-              >
-              <select
-                id="yearsSelectBox"
-                class="appearance-none pt-6 bg-[rgba(0,0,0,0)] text-[rgb(231,233,234)] focus:outline-none py-4 sm:pr-16 pl-2 w-full sm:w-auto"
-              ></select>
-              <svg
-                viewBox="0 0 24 24"
-                class="fill-third w-4 h-4 absolute right-2 pointer-events-none"
-              >
-                <g>
-                  <path
-                    d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </dv>
+
           <!-- input password-->
           <dv class="w-full mt-5 relative">
             <input
@@ -125,6 +77,7 @@
               class="w-full bg-[rgba(0,0,0,0)] border border-borderColor py-3 px-2 rounded-lg transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
               placeholder="password"
               name="password"
+              pattern="^(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}"
               required
             />
             <!-- Icon Eye Is Show And Hidden Password-->
@@ -153,7 +106,7 @@
               class="text-sm text-[rgb(244,33,46)] hidden absolute top-14 left-0 right-0"
             >
               The password must be at least 8 characters and a combination of
-              uppercase and lowercase letters and symbols
+              lowercase letters and symbols
             </span>
           </dv>
 
@@ -169,6 +122,6 @@
     </div>
 
     <!-- Scripts -->
-<!--    <script src="{% static 'js/registerUser.js' %}"></script>-->
+<!--    <script src="../static/js/registerUser.js"></script>-->
   </body>
 </html>

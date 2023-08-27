@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,15 +77,15 @@
         <!-- Forms -->
 
         <form action="/login" class="w-full" id="loginForm" method="post">
-
           {% csrf_token %}
           <!-- Input Email Or phone -->
           <div class="mt-3 w-full">
             <input
               type="text"
               class="bg-[rgba(0,0,0,0)] w-full border border-borderColor rounded-lg py-3 px-2 transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
-              placeholder="Phone or email"
+              placeholder="username or email"
               name="username"
+              required
             />
           </div>
           <!-- Input Password -->
@@ -124,9 +125,8 @@
                 class="text-sm text-[rgb(244,33,46)] hidden absolute top-14 left-0 right-0"
               >
                 The password must be at least 8 characters and a combination of
-                uppercase and lowercase letters and symbols
+                lowercase letters and symbols
               </span>
-
             </dv>
           </div>
 
@@ -138,10 +138,15 @@
           >
             Login
           </button>
+
+          <!-- error message login button -->
+          <span class="block text-[rgb(244,33,46)] text-center my-2"
+            >{{error_message}}
+          </span>
         </form>
       </div>
     </div>
 
-<!--    <script src="{% static 'js/loginUser.js' %}"></script>-->
+<!--    <script src="../static/js/loginUser.js"></script>-->
   </body>
 </html>
