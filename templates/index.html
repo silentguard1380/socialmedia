@@ -518,6 +518,7 @@
           <div class="text-center relative" id="content-twitter">
             <!-- Start create new tweet post form -->
             <form action="/" class="" id="newTweetForm" method="post">
+              {% csrf_token %}
               <!-- Start  modal Choose audience modal-->
               <div class="flex items-center p-4">
                 <span>
@@ -615,6 +616,7 @@
                     type="text"
                     class="bg-transparent text-xl placeholder:text-[#71767B] focus:outline-none placeholder:text-2xl p-5"
                     placeholder="what is happening?!"
+                    name="tweetinput"
                   />
                 </div>
               </div>

@@ -11,6 +11,10 @@ from .forms import UserProfileForm
 from .models import Post
 
 def home(request):
+    if request.POST:
+        tweetinput=request.POST.get('tweetinput')
+        Post.objects.create(user_id=request.user.id,text=tweetinput)
+
     try:
 
         user_profile = request.user.userprofile
@@ -30,6 +34,14 @@ def home(request):
 
 
         return render(request,'index.html',context={})
+
+# def tweet(request):
+#     if request.POST:
+#         tweetinput=request.POST.get('tweetinput')
+#         Post.objects.create(text=tweetinput)
+#
+#
+
 
 
 
