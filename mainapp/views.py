@@ -35,6 +35,7 @@ def home(request):
                 }
         return render(request, 'index.html', context=contex)
     except:
+        user_posts = Post.objects.filter(user=user)
         contex = {'username': request.user.username,
                   'name': request.user.first_name,
                   'post': user_posts
