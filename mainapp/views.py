@@ -13,7 +13,11 @@ from .models import Post
 def home(request):
     if request.POST:
         tweetinput=request.POST.get('tweetinput')
-        Post.objects.create(user_id=request.user.id,text=tweetinput)
+        if tweetinput.strip()=="":
+            pass
+        else:
+
+            Post.objects.create(user_id=request.user.id,text=tweetinput)
 
     try:
 
@@ -23,7 +27,7 @@ def home(request):
         user_posts = Post.objects.filter(user=user)
 
         contex={'username':request.user.username,
-                'name':request.user.username,
+                'name':request.user.first_name,
                 'profile_image' : user_profile.profile_image,
                 'post':user_posts
 
@@ -31,6 +35,11 @@ def home(request):
                 }
         return render(request, 'index.html', context=contex)
     except:
+        contex = {'username': request.user.username,
+                  'name': request.user.first_name,
+                  'post': user_posts
+
+                  }
 
 
         return render(request,'index.html',context={})
@@ -152,6 +161,8 @@ def userprofile(request):
         form = UserProfileForm(instance=user_profile)
 
     context = {'form': form,
+               'name':request.user.first_name,
+               'family':request.user.last_name,
                'username':request.user.username,
                'background_image':request.user.userprofile.background_image}
     return render(request, 'userProfile.html', context)

@@ -2,3 +2,5 @@ db.sqlite3
 .idea/
 .pyc
 .cpython
+post_image/*
+profile_image/*
