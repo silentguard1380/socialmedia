@@ -10,6 +10,25 @@ from .forms import UserProfileForm
 
 from .models import Post
 
+
+from django.views import View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@login_required(login_url='login')
 def home(request):
     if request.POST:
         tweetinput=request.POST.get('tweetinput')
@@ -50,7 +69,7 @@ def home(request):
 #         tweetinput=request.POST.get('tweetinput')
 #         Post.objects.create(text=tweetinput)
 #
-#
+
 
 
 

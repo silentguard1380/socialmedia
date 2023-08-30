@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- //link File css -->
-    <link rel="stylesheet" href="../static/css/app.css" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     <title>Twitter</title>
   </head>
   <body class="bg-[rgb(0,0,0)] font-ProductSansRegular text-white relative">
@@ -206,7 +206,7 @@
                   alt="user profile"
                 />
                 <span class="ml-2 text-base hidden xl:block">
-                  <h6>mohammad</h6>
+                  <h6>{{name}}  {{family}}</h6>
                   <small class="whitespace-nowrap overflow-hidden text-ellipsis"
                     >@{{username}}</small
                   >
@@ -707,9 +707,9 @@
 <!--                      alt="user image"-->
 <!--                    />-->
                     <span class="flex flex-col sm:hidden ml-2 items-start">
-                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>
+                      <h6 id="name" class="font-ProductSansBold">{{name}}</h6>
                       <small id="user-name" class="text-third text-sm"
-                        >@mhmd2003</small
+                        >@{{username}}</small
                       >
                     </span>
                   </button>
