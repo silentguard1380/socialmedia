@@ -2,3 +2,7 @@ db.sqlite3
 .idea/
 .pyc
 .cpython
+node_modules
+tailwind.config.js
+package-lock.json
+package.json
