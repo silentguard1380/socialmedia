@@ -605,12 +605,12 @@ input:focus {
   }
 }
 
-.pointer-events-none {
-  pointer-events: none;
-}
-
 .invisible {
   visibility: hidden;
+}
+
+.static {
+  position: static;
 }
 
 .fixed {
@@ -645,10 +645,6 @@ input:focus {
   left: 0px;
 }
 
-.left-2 {
-  left: 0.5rem;
-}
-
 .left-3 {
   left: 0.75rem;
 }
@@ -665,48 +661,24 @@ input:focus {
   top: 0px;
 }
 
-.top-1 {
-  top: 0.25rem;
-}
-
 .top-11 {
   top: 2.75rem;
+}
+
+.top-14 {
+  top: 3.5rem;
 }
 
 .top-\[10px\] {
   top: 10px;
 }
 
-.top-\[9\.5rem\] {
-  top: 9.5rem;
-}
-
-.top-1\/2 {
-  top: 50%;
-}
-
-.top-\[\] {
-  top: ;
-}
-
 .top-\[40\%\] {
   top: 40%;
 }
 
-.right-1 {
-  right: 0.25rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-16 {
-  top: 4rem;
-}
-
-.top-14 {
-  top: 3.5rem;
+.top-\[9\.5rem\] {
+  top: 9.5rem;
 }
 
 .z-20 {
@@ -722,6 +694,11 @@ input:focus {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -730,6 +707,10 @@ input:focus {
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.\!mt-14 {
+  margin-top: 3.5rem !important;
 }
 
 .-mt-8 {
@@ -812,14 +793,6 @@ input:focus {
   margin-top: 2rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mt-14 {
-  margin-top: 3.5rem;
-}
-
 .block {
   display: block;
 }
@@ -846,10 +819,6 @@ input:focus {
 
 .h-28 {
   height: 7rem;
-}
-
-.h-4 {
-  height: 1rem;
 }
 
 .h-5 {
@@ -906,10 +875,6 @@ input:focus {
 
 .w-28 {
   width: 7rem;
-}
-
-.w-4 {
-  width: 1rem;
 }
 
 .w-5 {
@@ -971,12 +936,6 @@ input:focus {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.appearance-none {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 .flex-row-reverse {
@@ -1305,10 +1264,6 @@ input:focus {
   padding-top: 1.25rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1362,10 +1317,6 @@ input:focus {
   font-weight: 500;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
 .lowercase {
   text-transform: lowercase;
 }
@@ -1378,11 +1329,6 @@ input:focus {
 .text-\[rgb\(15\2c 20\2c 25\)\] {
   --tw-text-opacity: 1;
   color: rgb(15 20 25 / var(--tw-text-opacity));
-}
-
-.text-\[rgb\(231\2c 233\2c 234\)\] {
-  --tw-text-opacity: 1;
-  color: rgb(231 233 234 / var(--tw-text-opacity));
 }
 
 .text-\[rgb\(244\2c 33\2c 46\)\] {
@@ -1785,10 +1731,6 @@ input:focus {
     width: calc(100% - 99px);
   }
 
-  .sm\:w-auto {
-    width: auto;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -1835,10 +1777,6 @@ input:focus {
   .sm\:pl-16 {
     padding-left: 4rem;
   }
-
-  .sm\:pr-16 {
-    padding-right: 4rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1850,8 +1788,12 @@ input:focus {
     width: 39%;
   }
 
-  .lg\:w-\[60\%\] {
-    width: 60%;
+  .lg\:w-\[56\%\] {
+    width: 56%;
+  }
+
+  .lg\:w-\[57\%\] {
+    width: 57%;
   }
 
   .lg\:w-\[calc\(100\%-94px\)\] {

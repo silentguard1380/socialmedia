@@ -8,31 +8,48 @@ const loginButton = document.querySelector("#loginButton");
 const eyePasswordLogin = document.querySelector("#eyePasswordLogin");
 const loginPasswordIcon = document.querySelector("#loginPasswordIcon");
 // regex rule
-const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
+const passwordRegex = /^(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
+// /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$ %^&*-]).{8,16}/;
 
-const loginPasswordInputValidationHandler = () => {
-  const resultValidation = passwordRegex.test(loginPasswordInput.value);
+let passwordStatusValidation = null;
 
+const InputValidationStatus = (
+  regexRule,
+  mainInputValidationMessage,
+  mainInput
+) => {
+  const resultValidation = regexRule.test(loginPasswordInput.value);
   if (!resultValidation) {
-    loginPasswordValidationMessage.classList.remove("hidden");
-    loginPasswordInput.style.borderColor = "rgb(244, 33, 46)";
-    loginButton.classList.add("mt-14");
+    mainInputValidationMessage.classList.remove("hidden");
+    mainInput.style.borderColor = "rgb(244, 33, 46)";
+    loginButton.classList.add("!mt-14");
+    return resultValidation;
   } else {
-    loginPasswordValidationMessage.classList.add("hidden");
-    loginPasswordInput.style.borderColor = "rgb(29,155,240)";
-    loginButton.classList.remove("mt-14");
+    mainInputValidationMessage.classList.add("hidden");
+    mainInput.style.borderColor = "rgb(29,155,240)";
+    loginButton.classList.remove("!mt-14");
+    return resultValidation;
   }
 };
 
 // set events
-loginFormContainer.addEventListener("submit", (event) =>
-  event.preventDefault()
-);
+loginFormContainer.addEventListener("submit", (event) => {
+  if (!passwordStatusValidation) {
+    event.preventDefault();
+  }
+});
 loginPasswordInput.addEventListener(
   "keyup",
-  loginPasswordInputValidationHandler
+  () =>
+    (passwordStatusValidation = InputValidationStatus(
+      passwordRegex,
+      loginPasswordValidationMessage,
+      loginPasswordInput
+    ))
 );
-eyePasswordLogin.addEventListener("click", () => {
+eyePasswordLogin.addEventListener("click", (event) => {
+  event.preventDefault();
+
   if (loginPasswordInput.type === "password") {
     loginPasswordInput.type = "text";
     loginPasswordIcon.innerHTML = "";
