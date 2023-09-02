@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import signup_user,home,login_user,userprofile,logout_user
+from mainapp.views import signup_user,home,login_user,userprofile,logout_user,follow,unfollow
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
@@ -28,6 +28,9 @@ urlpatterns = [
     path('login', login_user,name='login'),
     path('userprofile', userprofile),
     path('logout', logout_user),
+
+    path('follow/<str:username>/', follow, name='follow'),
+    path('unfollow/<str:username>/', unfollow, name='unfollow'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -8,23 +8,7 @@ from django.contrib.auth import login,authenticate,get_user_model,logout
 from django.http import JsonResponse, HttpResponseBadRequest
 from .forms import UserProfileForm
 
-from .models import Post
-
-
-from django.views import View
-
-
-
-
-
-
-
-
-
-
-
-
-
+from .models import Post,UserProfile
 
 
 
@@ -186,3 +170,20 @@ def userprofile(request):
                'username':request.user.username,
                'background_image':request.user.userprofile.background_image}
     return render(request, 'userProfile.html', context)
+
+
+
+
+@login_required
+def follow(request, username):
+    user = User.objects.get(username=username)
+    profile = UserProfile.objects.get(user=user)
+    request.user.profile.followers.add(profile.user)
+    return redirect('profile', username=username)
+
+@login_required
+def unfollow(request, username):
+    user = User.objects.get(username=username)
+    profile = UserProfile.objects.get(user=user)
+    request.user.profile.followers.remove(profile.user)
+    return redirect('profile', username=username)

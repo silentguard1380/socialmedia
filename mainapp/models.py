@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 
 
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     bio = models.TextField(max_length=500, blank=True)
@@ -13,15 +15,19 @@ class UserProfile(models.Model):
     profile_image = models.ImageField(upload_to='static/profiles', blank=True)
     background_image = models.ImageField(upload_to='static/backgrounds', blank=True)
 
-    follows = models.ManyToManyField(
-        "self",
-        related_name="followed_by",
-        symmetrical=False,
-        blank=True
-    )
+    followers = models.ManyToManyField(User, related_name='following')
+    # )
     def __str__(self):
 
         return f'{self.user.username}'
+
+
+
+
+
+
+
+
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
