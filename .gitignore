@@ -6,3 +6,5 @@ node_modules
 tailwind.config.js
 package-lock.json
 package.json
+post_image/*
+profile_image/*
