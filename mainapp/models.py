@@ -15,7 +15,7 @@ class UserProfile(models.Model):
     profile_image = models.ImageField(upload_to='static/profiles', blank=True)
     background_image = models.ImageField(upload_to='static/backgrounds', blank=True)
 
-    followers = models.ManyToManyField(User, related_name='following')
+    followers = models.ManyToManyField('self', related_name='following', symmetrical=False)
     # )
     def __str__(self):
 

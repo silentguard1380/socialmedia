@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from mainapp.views import signup_user,home,login_user,userprofile,logout_user,follow,unfollow
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -31,6 +31,8 @@ urlpatterns = [
 
     path('follow/<str:username>/', follow, name='follow'),
     path('unfollow/<str:username>/', unfollow, name='unfollow'),
-]
+
+    path('__reload__/', include("django_browser_reload.urls")),
+    ]
 
 urlpatterns += staticfiles_urlpatterns()
