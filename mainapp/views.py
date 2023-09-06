@@ -10,7 +10,8 @@ from .forms import UserProfileForm
 
 from .models import Post,UserProfile
 
-
+def testtailwind(request):
+    return render(request,'base.html',context={})
 
 @login_required(login_url='login')
 def home(request):

@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
+{% load static tailwind_tags %}
 <html lang="en">
   <head>
     {% load static %}
+
+    {% tailwind_css %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- //link File css -->
-    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+<!--    <link rel="stylesheet" href="{% static 'css/app.css' %}" />-->
     <title>Twitter</title>
   </head>
   <body class="bg-[rgb(0,0,0)] font-ProductSansRegular text-white relative">
@@ -197,7 +201,7 @@
               >
                 <!-- //link -->
                 <img
-                  src="static/{{profile_image}}"
+                  src="{{profile_image}}"
                   class="rounded-full w-10 h-10"
                   alt="user profile"
                 />
@@ -236,7 +240,7 @@
                 <!-- //link -->
                 <img
                   class="w-full h-full object-cover rounded-full"
-                  src="static/{{profile_image}}"
+                  src="{{profile_image}}"
                   alt="profile image"
                 />
               </button>
@@ -267,7 +271,7 @@
                   <!-- //link -->
                   <img
                     class="w-full h-full object-cover rounded-full"
-                    src="static/{{profile_image}}"
+                    src="{{profile_image}}"
                     alt="profile image"
                   />
                 </button>
@@ -519,7 +523,7 @@
                   <!-- //link -->
                   <img
                     class="rounded-full w-14 h-14 max-w-none object-cover"
-                    src=" static/{{profile_image}}"
+                    src=" {{profile_image}}"
                     alt="user image"
                 /></span>
                 <div class="relative">
@@ -799,7 +803,7 @@
                   <button class="cursor-pointer flex items-center mb-2">
                     <!-- //link -->
                     <img
-                      src="static/{{profile_image}}"
+                      src="{{profile_image}}"
                       class="w-14 h-14 max-w-none object-cover rounded-full"
                       alt="user image"
                     />

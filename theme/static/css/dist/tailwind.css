@@ -1,0 +1,48 @@
+@font-face {
+  font-family: ProductSans-Regular;
+  src: url("../../static/fonts/ProductSans-Regular.ttf") format("truetype"),
+    url("../../static/fonts/ProductSans-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: ProductSans-Medium;
+  src: url("../../static/fonts/ProductSans-Medium.ttf") format("truetype"),
+    url("../../static/fonts/ProductSans-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: ProductSans-Bold;
+  src: url("../../static/fonts/ProductSans-Bold.ttf") format("truetype"),
+    url("../../static/fonts/ProductSans-Bold.woff2") format("woff2");
+}
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.overlay {
+  background-color: rgba(91, 112, 131, 0.4);
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.dropdown-icon__active {
+  transform: rotate(180deg);
+  fill: rgb(29, 155, 240) !important;
+}
+.search__bar:focus + svg {
+  fill: rgb(29, 155, 240) !important;
+}
