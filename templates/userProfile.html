@@ -79,9 +79,7 @@
                     ></path>
                   </g>
                 </svg>
-                <a class="hidden xl:block ml-4" href="./"
-                  >Notifications</a
-                >
+                <a class="hidden xl:block ml-4" href="./">Notifications</a>
               </li>
               <li
                 class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
@@ -129,9 +127,7 @@
                     ></path>
                   </g>
                 </svg>
-                <a class="hidden xl:block ml-4" href="./"
-                  >Communities</a
-                >
+                <a class="hidden xl:block ml-4" href="./">Communities</a>
               </li>
               <li
                 class="flex items-center justify-center xl:justify-start transition-all hover:bg-hoverBg p-3 xl:py-3 xl:pl-3 xl:pr-6 rounded-full"
@@ -207,7 +203,7 @@
                   alt="user profile"
                 />
                 <span class="ml-2 text-base hidden xl:block">
-                  <h6>{{name}}  {{family}}</h6>
+                  <h6>{{name}} {{family}}</h6>
                   <small class="whitespace-nowrap overflow-hidden text-ellipsis"
                     >@{{username}}</small
                   >
@@ -548,12 +544,25 @@
                   <div
                     class="flex max-[330px]:flex-col justify-between items-cenetr sm:items-end p-4"
                   >
-                    <span class="block w-28 sm:w-32 h-28 sm:h-32">
+                    <span class="block w-28 sm:w-32 h-28 sm:h-32 relative">
                       <img
                         src="static/{{ form.profile_image.value }}"
                         class="w-full h-full object-cover rounded-full border-4 border-[rgb(0,0,0)]"
                         alt="user small image"
                       />
+                      <!-- button uploader user profile image -->
+                      <label
+                        class="flex justify-center items-center cursor-pointer absolute right-4 top-[74%] bg-[rgb(239,243,244)] font-ProductSansMedium text-[rgb(0,0,0)] w-7 h-7 rounded-full text-2xl"
+                        for="profileImageUploader"
+                      >
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="w-[1px] h-[1px] opacity-0 overflow-hidden absolute -z-10"
+                          id="profileImageUploader"
+                        />
+                        <span class="absolute">+</span>
+                      </label>
                     </span>
                     <span
                       class="mb-2 flex flex-row-reverse items-center gap-2 sm:gap-3"
@@ -591,6 +600,27 @@
                           </g>
                         </svg>
                       </button>
+                      <!-- button uploader background user profile -->
+                      <label
+                        class="flex justify-center items-center cursor-pointer relative border border-[rgb(239,243,244)] w-10 h-10 rounded-full text-2xl"
+                        for="profileImageUploader"
+                      >
+                        <input
+                          type="file"
+                          accept="image/*"
+                          class="w-[1px] h-[1px] opacity-0 overflow-hidden absolute -z-10"
+                          id="profileImageUploader"
+                        />
+                        <svg
+                          fill="rgb(239,243,244)"
+                          viewBox="0 0 20 20"
+                          class="w-6 h-6"
+                        >
+                          <path
+                            d="M17.125 6.17L15.079.535c-.151-.416-.595-.637-.989-.492L.492 5.006c-.394.144-.593.597-.441 1.013l2.156 5.941V8.777c0-1.438 1.148-2.607 2.56-2.607H8.36l4.285-3.008 2.479 3.008h2.001zM19.238 8H4.767a.761.761 0 0 0-.762.777v9.42c.001.444.343.803.762.803h14.471c.42 0 .762-.359.762-.803v-9.42A.761.761 0 0 0 19.238 8zM18 17H6v-2l1.984-4.018 2.768 3.436 2.598-2.662 3.338-1.205L18 14v3z"
+                          />
+                        </svg>
+                      </label>
                     </span>
                   </div>
                 </div>
@@ -604,7 +634,7 @@
                   <h3
                     class="font-ProductSansBold text-lg pt-2 flex items-center"
                   >
-                    <span>{{name}}  {{family}}</span>
+                    <span>{{name}} {{family}}</span>
                     <!-- If you want the blue tick not to be considered, give the hidden class instead of the block class -->
                     <span class="bolok ml-1" id="blueTik">
                       <!-- add hidden class by hidden blue tick-->
@@ -621,17 +651,13 @@
                     class="text-third text-left text-base font-ProductSansMedium pb-2"
                   >
                     @{{username}}
-
-
                   </small>
                 </div>
                 <!-- End username and name account user-->
 
                 <!-- start user profile biography  -->
-<!--                bio-->
-                <p class="mt-1">
-                  {{ form.bio.value }}
-                </p>
+                <!--                bio-->
+                <p class="mt-1">{{ form.bio.value }}</p>
                 <!-- End user profile biography  -->
 
                 <!-- start profile followers -->
@@ -702,11 +728,11 @@
                 >
                   <button class="cursor-pointer flex items-center mb-2">
                     <!-- //link -->
-<!--                    <img-->
-<!--                      src="../static/images/users/user-1.jpg"-->
-<!--                      class="w-14 h-14 max-w-none object-cover rounded-full"-->
-<!--                      alt="user image"-->
-<!--                    />-->
+                    <!--                    <img-->
+                    <!--                      src="../static/images/users/user-1.jpg"-->
+                    <!--                      class="w-14 h-14 max-w-none object-cover rounded-full"-->
+                    <!--                      alt="user image"-->
+                    <!--                    />-->
                     <span class="flex flex-col sm:hidden ml-2 items-start">
                       <h6 id="name" class="font-ProductSansBold">{{name}}</h6>
                       <small id="user-name" class="text-third text-sm"
@@ -714,296 +740,91 @@
                       >
                     </span>
                   </button>
-<!--                  <div class="sm:ml-2 w-full">-->
-<!--                    <span class="hidden sm:flex sm:items-center">-->
-<!--                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>-->
-<!--                      <small id="user-name" class="ml-1 text-third text-sm"-->
-<!--                        >@mhmd2003</small-->
-<!--                      >-->
-<!--                    </span>-->
-<!--                    <p class="text-left mt-1">-->
-<!--                      j'arrive pas à me faire au fait que Twitter ça s'appelle-->
-<!--                      "x" maintenant, j'ai l'impression d'être sur un site de-->
-<!--                      cul in test twitt and lorem ipsum-->
-<!--                    </p>-->
-<!--                    &lt;!&ndash; Start Reactions Posts &ndash;&gt;-->
-<!--                    <div-->
-<!--                      class="mt-4 text-third fill-third text-sm flex justify-between items-center gap-4"-->
-<!--                    >-->
-<!--                      <button-->
-<!--                        id="replyPost"-->
-<!--                        class="flex items-center transition-all hover:text-primary hover:fill-primary"-->
-<!--                      >-->
-<!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
-<!--                          <g>-->
-<!--                            <path-->
-<!--                              d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"-->
-<!--                            ></path>-->
-<!--                          </g>-->
-<!--                        </svg>-->
-<!--                        <span class="block ml-2">1777</span>-->
-<!--                      </button>-->
-<!--                      <button-->
-<!--                        id="reTweet"-->
-<!--                        class="flex items-center transition-all hover:text-[rgb(0,186,124)] hover:fill-[rgb(0,186,124)]"-->
-<!--                      >-->
-<!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
-<!--                          <g>-->
-<!--                            <path-->
-<!--                              d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"-->
-<!--                            ></path>-->
-<!--                          </g>-->
-<!--                        </svg>-->
-<!--                        <span class="block ml-2">7,394</span>-->
-<!--                      </button>-->
-<!--                      <button-->
-<!--                        id="likePost"-->
-<!--                        class="flex items-center transition-all hover:text-[#F91880] hover:fill-[#F91880]"-->
-<!--                      >-->
-<!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
-<!--                          <g>-->
-<!--                            <path-->
-<!--                              d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"-->
-<!--                            ></path>-->
-<!--                          </g>-->
-<!--                        </svg>-->
-<!--                        <span class="block ml-2">40.8k</span>-->
-<!--                      </button>-->
-<!--                      <button-->
-<!--                        id="viewPost"-->
-<!--                        class="flex items-center transition-all hover:text-primary hover:fill-primary"-->
-<!--                      >-->
-<!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
-<!--                          <g>-->
-<!--                            <path-->
-<!--                              d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"-->
-<!--                            ></path>-->
-<!--                          </g>-->
-<!--                        </svg>-->
-<!--                        <span class="block ml-2">1.2m</span>-->
-<!--                      </button>-->
-<!--                      <button-->
-<!--                        id="sharePost"-->
-<!--                        class="flex items-center transition-all hover:fill-primary"-->
-<!--                      >-->
-<!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
-<!--                          <g>-->
-<!--                            <path-->
-<!--                              d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"-->
-<!--                            ></path>-->
-<!--                          </g>-->
-<!--                        </svg>-->
-<!--                      </button>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; End Reactions Posts &ndash;&gt;-->
-<!--                  </div>-->
+                  <!--                  <div class="sm:ml-2 w-full">-->
+                  <!--                    <span class="hidden sm:flex sm:items-center">-->
+                  <!--                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>-->
+                  <!--                      <small id="user-name" class="ml-1 text-third text-sm"-->
+                  <!--                        >@mhmd2003</small-->
+                  <!--                      >-->
+                  <!--                    </span>-->
+                  <!--                    <p class="text-left mt-1">-->
+                  <!--                      j'arrive pas à me faire au fait que Twitter ça s'appelle-->
+                  <!--                      "x" maintenant, j'ai l'impression d'être sur un site de-->
+                  <!--                      cul in test twitt and lorem ipsum-->
+                  <!--                    </p>-->
+                  <!--                    &lt;!&ndash; Start Reactions Posts &ndash;&gt;-->
+                  <!--                    <div-->
+                  <!--                      class="mt-4 text-third fill-third text-sm flex justify-between items-center gap-4"-->
+                  <!--                    >-->
+                  <!--                      <button-->
+                  <!--                        id="replyPost"-->
+                  <!--                        class="flex items-center transition-all hover:text-primary hover:fill-primary"-->
+                  <!--                      >-->
+                  <!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
+                  <!--                          <g>-->
+                  <!--                            <path-->
+                  <!--                              d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"-->
+                  <!--                            ></path>-->
+                  <!--                          </g>-->
+                  <!--                        </svg>-->
+                  <!--                        <span class="block ml-2">1777</span>-->
+                  <!--                      </button>-->
+                  <!--                      <button-->
+                  <!--                        id="reTweet"-->
+                  <!--                        class="flex items-center transition-all hover:text-[rgb(0,186,124)] hover:fill-[rgb(0,186,124)]"-->
+                  <!--                      >-->
+                  <!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
+                  <!--                          <g>-->
+                  <!--                            <path-->
+                  <!--                              d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"-->
+                  <!--                            ></path>-->
+                  <!--                          </g>-->
+                  <!--                        </svg>-->
+                  <!--                        <span class="block ml-2">7,394</span>-->
+                  <!--                      </button>-->
+                  <!--                      <button-->
+                  <!--                        id="likePost"-->
+                  <!--                        class="flex items-center transition-all hover:text-[#F91880] hover:fill-[#F91880]"-->
+                  <!--                      >-->
+                  <!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
+                  <!--                          <g>-->
+                  <!--                            <path-->
+                  <!--                              d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"-->
+                  <!--                            ></path>-->
+                  <!--                          </g>-->
+                  <!--                        </svg>-->
+                  <!--                        <span class="block ml-2">40.8k</span>-->
+                  <!--                      </button>-->
+                  <!--                      <button-->
+                  <!--                        id="viewPost"-->
+                  <!--                        class="flex items-center transition-all hover:text-primary hover:fill-primary"-->
+                  <!--                      >-->
+                  <!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
+                  <!--                          <g>-->
+                  <!--                            <path-->
+                  <!--                              d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"-->
+                  <!--                            ></path>-->
+                  <!--                          </g>-->
+                  <!--                        </svg>-->
+                  <!--                        <span class="block ml-2">1.2m</span>-->
+                  <!--                      </button>-->
+                  <!--                      <button-->
+                  <!--                        id="sharePost"-->
+                  <!--                        class="flex items-center transition-all hover:fill-primary"-->
+                  <!--                      >-->
+                  <!--                        <svg viewBox="0 0 24 24" class="w-5 h-5">-->
+                  <!--                          <g>-->
+                  <!--                            <path-->
+                  <!--                              d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"-->
+                  <!--                            ></path>-->
+                  <!--                          </g>-->
+                  <!--                        </svg>-->
+                  <!--                      </button>-->
+                  <!--                    </div>-->
+                  <!--                    &lt;!&ndash; End Reactions Posts &ndash;&gt;-->
+                  <!--                  </div>-->
                 </div>
-                <div
-                  id="textTweetItem"
-                  class="flex flex-col sm:flex-row items-start border-t border-b border-borderColor p-4"
-                >
-                  <button class="cursor-pointer flex items-center mb-2">
-                    <!-- //link -->
-                    <img
-                      src="../static/images/users/user-1.jpg"
-                      class="w-14 h-14 max-w-none object-cover rounded-full"
-                      alt="user image"
-                    />
-                    <span class="flex flex-col items-start sm:hidden ml-2">
-                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>
-                      <small id="user-name" class="text-third text-sm"
-                        >@mhmd2003</small
-                      >
-                    </span>
-                  </button>
-                  <div class="sm:ml-2 w-full">
-                    <span class="hidden sm:flex sm:items-center">
-                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>
-                      <small id="user-name" class="ml-1 text-third text-sm"
-                        >@mhmd2003</small
-                      >
-                    </span>
-                    <p class="text-left mt-1">
-                      Behind every point, there's a story of hardwork and
-                      perseverance 🎾 Jess Pegula is consistently bringing her
-                      A-game, not just on the court, but also in the gym 🎾💪
-                    </p>
-                    <!-- Start Reactions Posts -->
-                    <div
-                      class="mt-4 text-third fill-third text-sm flex justify-between items-center gap-4"
-                    >
-                      <button
-                        id="replyPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">905</span>
-                      </button>
-                      <button
-                        id="reTweet"
-                        class="flex items-center transition-all hover:text-[rgb(0,186,124)] hover:fill-[rgb(0,186,124)]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">4,359</span>
-                      </button>
-                      <button
-                        id="likePost"
-                        class="flex items-center transition-all hover:text-[#F91880] hover:fill-[#F91880]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">30.2k</span>
-                      </button>
-                      <button
-                        id="viewPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">500k</span>
-                      </button>
-                      <button
-                        id="sharePost"
-                        class="flex items-center transition-all hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </button>
-                    </div>
-                    <!-- End Reactions Posts -->
-                  </div>
-                </div>
-                <div
-                  id="textTweetItem"
-                  class="flex flex-col sm:flex-row items-start border-t border-b border-borderColor p-4"
-                >
-                  <button class="cursor-pointer flex items-center mb-2">
-                    <!-- //link -->
-                    <img
-                      src="../static/images/users/user-1.jpg"
-                      class="w-14 h-14 max-w-none object-cover rounded-full"
-                      alt="user image"
-                    />
-                    <span class="flex flex-col items-start sm:hidden ml-2">
-                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>
-                      <small id="user-name" class="text-third text-sm"
-                        >@mhmd2003</small
-                      >
-                    </span>
-                  </button>
-                  <div class="sm:ml-2 w-full">
-                    <span class="hidden sm:flex sm:items-center">
-                      <h6 id="name" class="font-ProductSansBold">mohammad</h6>
-                      <small id="user-name" class="ml-1 text-third text-sm"
-                        >@mhmd2003</small
-                      >
-                    </span>
-                    <p class="text-left mt-1">
-                      Be an engine, not a caboose 🚂💨 Take charge, lead the
-                      way, create your own path 🔝💪 The journey may be tough,
-                      but remember: You're not here to follow, you're here to
-                      forge ahead 🛤️🔥 Let's power through... one goal at a time
-                      🎯💯
-                    </p>
-                    <!-- Start Reactions Posts -->
-                    <div
-                      class="mt-4 text-third fill-third text-sm flex justify-between items-center gap-4"
-                    >
-                      <button
-                        id="replyPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">1507</span>
-                      </button>
-                      <button
-                        id="reTweet"
-                        class="flex items-center transition-all hover:text-[rgb(0,186,124)] hover:fill-[rgb(0,186,124)]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">9,594</span>
-                      </button>
-                      <button
-                        id="likePost"
-                        class="flex items-center transition-all hover:text-[#F91880] hover:fill-[#F91880]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">60.8k</span>
-                      </button>
-                      <button
-                        id="viewPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">1.5m</span>
-                      </button>
-                      <button
-                        id="sharePost"
-                        class="flex items-center transition-all hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </button>
-                    </div>
-                    <!-- End Reactions Posts -->
-                  </div>
-                </div>
+
                 <div
                   id="textTweetItem"
                   class="flex flex-col sm:flex-row items-start border-t border-b border-borderColor p-4"
@@ -1111,110 +932,7 @@
                 <!-- End template Post Twitter Text-->
 
                 <!-- Start template Post Twitter Image And Text-->
-                <div
-                  id="imageTweetItem"
-                  class="flex flex-col items-start border-t border-b border-borderColor p-4"
-                >
-                  <div class="flex flex-col">
-                    <div class="cursor-pointer flex items-center mb-2">
-                      <!-- //link -->
-                      <img
-                        src="../static/images/users/user-1.jpg"
-                        class="w-14 h-14 max-w-none object-cover rounded-full"
-                        alt="user image"
-                      />
-                      <span class="flex items-center ml-3">
-                        <h6 id="name" class="font-ProductSansBold">mohammad</h6>
-                        <small id="user-name" class="ml-1 text-third text-sm"
-                          >@mhmd2003
-                        </small>
-                      </span>
-                    </div>
-                    <p class="text-left mt-1 sm:ml-16 mb-3">
-                      Do you like the new X app logo?
-                    </p>
-                  </div>
-                  <div class="w-full sm:pl-16 sm:px-8">
-                    <!-- //link -->
-                    <img
-                      src="../static/images/posts/post-1.png"
-                      class="w-full h-full rounded-3xl"
-                      alt="tweet image"
-                    />
-                  </div>
-                  <!-- Start Reactions Posts -->
-                  <div class="sm:pl-16 w-full">
-                    <div
-                      class="mt-4 text-third fill-third text-sm flex justify-between items-center gap-4"
-                    >
-                      <button
-                        id="replyPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">1107</span>
-                      </button>
-                      <button
-                        id="reTweet"
-                        class="flex items-center transition-all hover:text-[rgb(0,186,124)] hover:fill-[rgb(0,186,124)]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">10,674</span>
-                      </button>
-                      <button
-                        id="likePost"
-                        class="flex items-center transition-all hover:text-[#F91880] hover:fill-[#F91880]"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">50.8k</span>
-                      </button>
-                      <button
-                        id="viewPost"
-                        class="flex items-center transition-all hover:text-primary hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"
-                            ></path>
-                          </g>
-                        </svg>
-                        <span class="block ml-2">800k</span>
-                      </button>
-                      <button
-                        id="sharePost"
-                        class="flex items-center transition-all hover:fill-primary"
-                      >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5">
-                          <g>
-                            <path
-                              d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <!-- End Reactions Posts -->
-                </div>
+
                 <div
                   id="imageTweetItem"
                   class="flex flex-col items-start border-t border-b border-borderColor p-4"

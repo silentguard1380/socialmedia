@@ -657,6 +657,10 @@ input:focus {
   right: 0.5rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -677,8 +681,16 @@ input:focus {
   top: 40%;
 }
 
+.top-\[74\%\] {
+  top: 74%;
+}
+
 .top-\[9\.5rem\] {
   top: 9.5rem;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .z-20 {
@@ -841,6 +853,10 @@ input:focus {
   height: 2.25rem;
 }
 
+.h-\[1px\] {
+  height: 1px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -891,6 +907,10 @@ input:focus {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[1px\] {
+  width: 1px;
 }
 
 .w-\[270px\] {
