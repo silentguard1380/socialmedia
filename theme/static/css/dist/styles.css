@@ -685,6 +685,10 @@ input:focus {
   top: 74%;
 }
 
+.top-\[75px\] {
+  top: 75px;
+}
+
 .top-\[9\.5rem\] {
   top: 9.5rem;
 }
@@ -777,6 +781,10 @@ input:focus {
   margin-right: 0.75rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -799,6 +807,10 @@ input:focus {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mt-8 {
@@ -833,6 +845,10 @@ input:focus {
   height: 7rem;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -855,6 +871,10 @@ input:focus {
 
 .h-\[1px\] {
   height: 1px;
+}
+
+.h-\[85vh\] {
+  height: 85vh;
 }
 
 .h-auto {
@@ -948,6 +968,10 @@ input:focus {
 
 .max-w-none {
   max-width: none;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-grow {

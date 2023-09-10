@@ -572,55 +572,13 @@
                       >
                         Follow
                       </button>
+                      <!-- button Edit Profile -->
                       <button
                         class="p-2 border border-[rgb(239,243,244)] rounded-full"
+                        id="editProfileBtn"
                       >
-                        <svg
-                          viewBox="0 0 24 24"
-                          class="fill-[rgb(239,243,244)] w-5 h-5"
-                        >
-                          <g>
-                            <path
-                              d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"
-                            ></path>
-                          </g>
-                        </svg>
+                        Edit profile
                       </button>
-                      <button
-                        class="p-2 border border-[rgb(239,243,244)] rounded-full"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          class="fill-[rgb(239,243,244)] w-5 h-5"
-                        >
-                          <g>
-                            <path
-                              d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
-                            ></path>
-                          </g>
-                        </svg>
-                      </button>
-                      <!-- button uploader background user profile -->
-                      <label
-                        class="flex justify-center items-center cursor-pointer relative border border-[rgb(239,243,244)] w-10 h-10 rounded-full text-2xl"
-                        for="profileImageUploader"
-                      >
-                        <input
-                          type="file"
-                          accept="image/*"
-                          class="w-[1px] h-[1px] opacity-0 overflow-hidden absolute -z-10"
-                          id="profileImageUploader"
-                        />
-                        <svg
-                          fill="rgb(239,243,244)"
-                          viewBox="0 0 20 20"
-                          class="w-6 h-6"
-                        >
-                          <path
-                            d="M17.125 6.17L15.079.535c-.151-.416-.595-.637-.989-.492L.492 5.006c-.394.144-.593.597-.441 1.013l2.156 5.941V8.777c0-1.438 1.148-2.607 2.56-2.607H8.36l4.285-3.008 2.479 3.008h2.001zM19.238 8H4.767a.761.761 0 0 0-.762.777v9.42c.001.444.343.803.762.803h14.471c.42 0 .762-.359.762-.803v-9.42A.761.761 0 0 0 19.238 8zM18 17H6v-2l1.984-4.018 2.768 3.436 2.598-2.662 3.338-1.205L18 14v3z"
-                          />
-                        </svg>
-                      </label>
                     </span>
                   </div>
                 </div>
@@ -1414,7 +1372,89 @@
       </main>
     </div>
 
+    <!-- Edit Profile Modal -->
+    <div
+      id="editProfileModal"
+      class="opacity-0 invisible transition-all max-w-xl bg-[rgb(0,0,0)] mx-auto p-4 h-[85vh] w-full fixed top-[75px] left-0 right-0 rounded-2xl z-50"
+    >
+      <form action="#" class="z-50 w-full">
+        <!-- Edit Profile Modal Topbar-->
+        <div class="flex justify-between mt-3">
+          <span>
+            <button class="mr-8" id="editProfileCloseBtn">X</button>
+            <span class="font-ProductSansMedium text-xl">Edit profile </span>
+          </span>
+          <button
+            type="submit"
+            class="bg-[rgb(239,243,244)] font-ProductSansMedium text-[rgb(0,0,0)] h-9 px-4 rounded-2xl"
+          >
+            save
+          </button>
+        </div>
+        <!-- Edit Profile Modal Background Image Input-->
+        <div class="relative mt-6">
+          <img class="w-full h-40 object-cover" />
+          <span
+            class="flex justify-center absolute top-[40%] left-0 right-0 mx-auto"
+          >
+            <label
+              class="flex justify-center items-center cursor-pointer relative border border-[rgb(239,243,244)] w-10 h-10 rounded-full text-2xl"
+              for="profileImageUploader"
+            >
+              <input
+                type="file"
+                accept="image/*"
+                class="w-[1px] h-[1px] opacity-0 overflow-hidden absolute -z-10"
+                id="profileImageUploader"
+              />
+              <svg fill="rgb(239,243,244)" viewBox="0 0 20 20" class="w-6 h-6">
+                <path
+                  d="M17.125 6.17L15.079.535c-.151-.416-.595-.637-.989-.492L.492 5.006c-.394.144-.593.597-.441 1.013l2.156 5.941V8.777c0-1.438 1.148-2.607 2.56-2.607H8.36l4.285-3.008 2.479 3.008h2.001zM19.238 8H4.767a.761.761 0 0 0-.762.777v9.42c.001.444.343.803.762.803h14.471c.42 0 .762-.359.762-.803v-9.42A.761.761 0 0 0 19.238 8zM18 17H6v-2l1.984-4.018 2.768 3.436 2.598-2.662 3.338-1.205L18 14v3z"
+                />
+              </svg>
+            </label>
+          </span>
+        </div>
+
+        <!-- Edit Profile Modal Input Name -->
+        <div class="mt-6">
+          <input
+            type="text"
+            class="bg-[rgba(0,0,0,0)] w-full border border-borderColor rounded-lg py-4 px-2 transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
+            placeholder="Name"
+            name="text"
+            required=""
+            min="1"
+            max="50"
+          />
+        </div>
+        <!-- Edit Profile Modal Input Bio -->
+        <div class="mt-6">
+          <textarea
+            type="text"
+            class="bg-[rgba(0,0,0,0)] w-full border border-borderColor rounded-lg py-3 px-2 transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
+            placeholder="Bio"
+            min="3"
+            max="160"
+          ></textarea>
+        </div>
+
+        <!-- Edit Profile Modal Input Location -->
+        <div class="mt-6">
+          <input
+            type="text"
+            class="bg-[rgba(0,0,0,0)] w-full border border-borderColor rounded-lg py-4 px-2 transition-all duration-200 focus:border-primary focus:placeholder:text-primary focus:placeholder:text-sm"
+            placeholder="Location"
+            name="text"
+            required=""
+            min="1"
+            max="50"
+          />
+        </div>
+      </form>
+    </div>
+
     <!-- //link File Js -->
-    <!-- <script src="../static/js/app.js"></script> -->
+    <script src="../static/js/userProfile.js"></script>
   </body>
 </html>
